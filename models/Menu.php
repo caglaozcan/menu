@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\menu\models;
 
 use Yii;
 
@@ -14,7 +14,7 @@ use Yii;
  *
  * @property data[] $data
  */
-class Samples extends \yii\db\ActiveRecord
+class Menu extends \yii\db\ActiveRecord
 {
 
     /**
@@ -22,7 +22,7 @@ class Samples extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'samples';
+        return 'menu';
     }
 
     /**
@@ -51,7 +51,7 @@ class Samples extends \yii\db\ActiveRecord
     }
 
     public function getImagePath(){
-        return sprintf("%s/samples/%s",Yii::getAlias ( '@data' ),$this->picture);
+        return sprintf("%s/menu/%s",Yii::getAlias ( '@data' ),$this->picture);
     }
 
     /**
@@ -59,6 +59,6 @@ class Samples extends \yii\db\ActiveRecord
      */
     public function getData()
     {
-        return $this->hasMany(SampleData::className(), ['sample_id' => 'id']);
+        return $this->hasMany(MenuData::className(), ['menu_id' => 'id']);
     }
 }

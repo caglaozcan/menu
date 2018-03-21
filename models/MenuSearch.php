@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\menu\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
+ * MenuSearch represents the model behind the search form about `app\modules\menu\models\Menu`.
  */
-class SamplesSearch extends Samples
+class MenuSearch extends Menu
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class SamplesSearch extends Samples
      */
     public function search($params)
     {
-        $query = Samples::find();
+        $query = Menu::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
